@@ -50,6 +50,8 @@ public class NoticiaControlador {
         return "editar.html";
     }
 
+    // Aca empieza el mapping para editar el contenido persistente, notese que ambos
+    // estan mapeados al mismo lugar.
     @GetMapping("/modificar/{id}")
     public String modificarNoticia(@PathVariable Long id, ModelMap modelo, MultipartFile archivo) {
         modelo.put("noticia", noticiaServicio.encontrarPorId(id));
@@ -66,12 +68,14 @@ public class NoticiaControlador {
         return "redirect:../noticias";
     }
 
+    // Este metodo se encarga de eliminar de la persistencia.
     @GetMapping("eliminar/{id}")
     public String eliminar(@PathVariable Long id) {
         noticiaServicio.eliminar(id);
         return "redirect:../noticias";
     }
 
+    // Este metodo es solo para mostrar.
     @GetMapping("/noticias")
     public String listar(ModelMap modelo) {
         List<Noticia> noticias = noticiaServicio.listarNoticias();

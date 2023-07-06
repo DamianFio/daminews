@@ -20,6 +20,10 @@ public class ImagenControlador {
     @Autowired
     NoticiaServicio noticiaServicio;
 
+    // Este controlador se encarga de enviar la imagen al html a travez del
+    // @Getmapping
+    // La clase responde entity convierte la imagen de byte a imagen con el
+    // HttpHeaders.
     @GetMapping("/imagen/{id}")
     public ResponseEntity<byte[]> imagenNoticia(@PathVariable Long id) {
         Noticia noticia = noticiaServicio.encontrarPorId(id);

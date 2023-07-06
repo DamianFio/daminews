@@ -50,6 +50,9 @@ public class NoticiaServicio {
         return noticias;
     }
 
+    // Este metodo se encarga de actualizar el objeto completo, incluso su objeto
+    // herenciado.
+    // Asi que tiene que generar una doble busqueda, el objeto mas su herencia.
     @Transactional
     public void actualizar(MultipartFile archivo, Long id, String nombre, String cuerpo) throws MiException {
         validar(nombre, cuerpo);
@@ -79,6 +82,7 @@ public class NoticiaServicio {
 
     }
 
+    // Este metodo elimina de la persistencia luego de buscar y encontrar el objeto.
     public void eliminar(Long id) {
         Noticia noticia = noticiaRepositorio.getOne(id);
         noticiaRepositorio.delete(noticia);

@@ -16,6 +16,9 @@ public class ImagenServicio {
     @Autowired
     private ImagenRepositorio imagenRepositorio;
 
+    // Este metodo solo se enecarga de guardar un archivo que no existe.
+    // Como pueden ver no tiene mucha ciencia, es simplemente igualar lo que viene
+    // de la imagen del html.
     public Imagen guardar(MultipartFile archivo) throws IOException {
         if (archivo != null) {
             try {
@@ -33,6 +36,9 @@ public class ImagenServicio {
         return null;
     }
 
+    // Este metodo por otro lado, requiere la existencia de un QUERY en la base de
+    // datos para encontrar dicho objeto
+    // Por este mismo motivo tiene un metodo de busqueda interno.
     public Imagen actualizar(MultipartFile archivo, Long id) {
         if (archivo != null) {
             try {

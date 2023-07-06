@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+        <form th:action="@{/registro}" method="post" enctype="multipart/form-data">
+            <div>
+                <h4>Registrar Noticia</h4>
+            </div>
+            <div>
+                <input type="text" name="nombre" placeholder="Titulo de la noticia">
+            </div>
+            <div>
+                <input type="text" name="cuerpo" placeholder="Cuerpo de la noticia">
+            </div>
+            <div>
+                <input type="file" name="archivo">
+            </div>
+            <button type="submit">Save</button>
+
+        </form>
+
+
+    </div>
+
+</body>
+
+</html>

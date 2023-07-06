@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div>
+        <div th:each="noticia : ${noticias}">
+            <h2 th:text="${noticia.nombre}"></h2>
+            <p th:text="${noticia.cuerpo}"></p>
+            <img th:src="@{/imagen/imagen/__${noticia.id}__}" alt="imagen">
+        </div>
+
+    </div>
+</body>
+
+</html>

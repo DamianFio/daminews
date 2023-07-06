@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+        <form th:action="@{/modificar/__${noticia.id}__}" method="post" enctype="multipart/form-data">
+            <div>
+                <h4>Editar Noticia</h4>
+            </div>
+            <input hidden th:value="${noticia.id}" name="id">
+            <div>
+                <input type="text" name="nombre" th:value="${noticia.nombre}">
+            </div>
+            <div>
+                <input type="text" name="cuerpo" th:value="${noticia.cuerpo}">
+            </div>
+            <div>
+                <input type="file" name="archivo">
+            </div>
+            <button type="submit">Save</button>
+
+        </form>
+</body>
+
+</html>

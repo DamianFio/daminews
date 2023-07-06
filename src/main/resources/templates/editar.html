@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+        <table>
+            <thead>
+                <th scope="col">Id</th>
+                <th scope="col">Titulo</th>
+                <th scope="col">Editar</th>
+                <th scope="col">Eliminar</th>
+            </thead>
+            <tbody th:each=" noticia : ${noticias}">
+                <th scope="row" th:text="${noticia.id}"></th>
+                <td th:text="${noticia.nombre}"></td>
+                <td>
+                    <a th:href="@{/modificar/__${noticia.id}__}">Modificar</a>
+                </td>
+                <td>
+                    <a th:href="@{/eliminar/__${noticia.id}__}">Eliminar</a>
+                </td>
+
+
+
+            </tbody>
+        </table>
+
+    </div>
+</body>
+
+</html>
